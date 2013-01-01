@@ -1,0 +1,3 @@
+[% META title = "Hello Page" %]
+
+<h1>Hello New Application!</h1>
