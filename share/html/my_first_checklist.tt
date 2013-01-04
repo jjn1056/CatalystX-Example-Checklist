@@ -1,0 +1,22 @@
+[% META title = "Welcome" %]
+
+<section id="my-first-checklist">
+  <header>
+    <h1>My Checklist</h1>
+    <form id="add-new-item" method="POST">
+      <input name="new-item" type="input"
+        placeholder="What's the next item on the list?"/>
+    </form>
+  </header>  
+  <section id="checklist_items">
+    <form>  
+      <ul>[% FOREACH item IN items %]
+        <li>[% item %]
+        </li>
+      [% END %]</ul>
+    </form>
+  </section>
+  <footer>
+    Total Items: <span id="item-count">[% items.size %]</span>
+  </footer>
+</section>

@@ -41,7 +41,7 @@
     INCLUDE_PATH => [ '__path_to(share,html)__',
       '__path_to(share,html,lib)__' ],
     TEMPLATE_EXTENSION => '.tt',
-    PROCESS => 'page.tt',
+    PROCESS => 'page',
     EXPOSE_BLOCKS => 1,
   },
 
