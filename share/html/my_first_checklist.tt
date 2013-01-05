@@ -3,15 +3,19 @@
 <section id="my-first-checklist">
   <header>
     <h1>My Checklist</h1>
-    <form id="add-new-item" method="POST">
-      <input name="new-item" type="input"
+    <form id="add-new-item" method="POST"
+      action="[% uri_for_action(c.controller.action_for('add')) %]">
+      <input name="new-item" type="input" autofocus="autofocus"
         placeholder="What's the next item on the list?"/>
     </form>
   </header>  
   <section id="checklist_items">
-    <form>  
+    <form method="POST"
+      action="[% uri_for_action(c.controller.action_for('delete')) %]">  
       <ul>[% FOREACH item IN items %]
-        <li>[% item %]
+        <li>
+          <span>[% item %]</span>
+          <button name="delete-item" value="[% loop.index %]">Delete</button>
         </li>
       [% END %]</ul>
     </form>
