@@ -5,5 +5,5 @@ use Moose;
 extends 'Catalyst::Controller';
 
 __PACKAGE__->config(
-  action_roles => ['MatchRequestMethod'],
+  action_roles => ['MatchRequestMethod','QueryParameter'],
 );

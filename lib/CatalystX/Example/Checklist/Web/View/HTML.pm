@@ -24,7 +24,13 @@ sub model {
   $ctx->model(@args);
 }
 
+sub controller {
+  my ($self, $ctx, @args) = @_;
+  $ctx->controller(@args);
+}
+
 __PACKAGE__->config(
   expose_methods => [qw/
-    uri_for_action model uri_for static_uri/],
+    uri_for_action model uri_for static_uri
+    controller /],
 );

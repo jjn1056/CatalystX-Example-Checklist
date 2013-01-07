@@ -1,26 +1,41 @@
-[% META title = "Welcome" %]
+[% META title = "Welcome To Checklist.ly!" %]
+
+<section>
+  <h1>Checklist.ly - Aware Checklists!</h1>
+  <p>Checklist.ly lets you create lists that self organize around you and your
+  friends!  Things you want to do, things you want to avoid, things you need to
+  remember... Anything at All!</p>
+  <p>Once you have some checklists, Checklist.ly helps to to organize and
+  understand them by give you powerful ways to sort, review, tag and more. It
+  also lets you create dynamic reports on your checklists and your friends
+  so you can quickly understand.</p>
+  <p>But Checklist.ly does more!  It pays attention to the types of lists you
+  create and offers you advice regarding them.  So get organized or just share
+  some wishes and laughes with your friends and the world!</p>
+</section>
 
 <section id="my-first-checklist">
   <header>
-    <h1>My Checklist</h1>
+    <h1>My First Checklist</h1>
     <form id="add-new-item" method="POST"
-      action="[% uri_for_action(c.controller.action_for('add')) %]">
+      action="[% uri_for_action(controller.action_for('add')) %]">
       <input name="new-item" type="input" autofocus="autofocus"
         placeholder="What's the next item on the list?"/>
     </form>
   </header>  
   <section id="checklist_items">
     <form method="POST"
-      action="[% uri_for_action(c.controller.action_for('delete')) %]">  
-      <ul>[% FOREACH item IN items %]
+      action="[% uri_for_action(controller.action_for('delete')) %]">  
+      <ul>[% FOREACH item IN checklist.items %]
         <li>
           <span>[% item %]</span>
-          <button name="delete-item" value="[% loop.index %]">Delete</button>
+          <button name="delete-index" value="[% loop.index %]">
+            Delete</button>
         </li>
       [% END %]</ul>
     </form>
   </section>
   <footer>
-    Total Items: <span id="item-count">[% items.size %]</span>
+    Total Items: <span id="item-count">[% checklist.total %]</span>
   </footer>
 </section>
